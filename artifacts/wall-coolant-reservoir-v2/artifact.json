@@ -1,0 +1,45 @@
+{
+  "id": "sms-proposed-water-in-reserve-v2",
+  "title": "Water, in Reserve — Wall-Mounted ABS Coolant Reservoir",
+  "status": "Proposed SMS artifact / digitally checked CAD prototype / physical water testing pending",
+  "type": "3D design / functional fabrication / coolant circulation",
+  "credit": {
+    "creative_direction": "Brad DeVowe",
+    "cad_assistance": "Lincoln (ChatGPT / OpenAI)",
+    "publication_review": "Simple Minds Studios — pending"
+  },
+  "version": "V2",
+  "documented_date": "2026-11-08",
+  "summary": "Compact wall-mounted, vented ABS tank for continuous warm-water circulation with a 90-degree 3/8-inch ID hose barb printed directly into the bottom reservoir wall, a pump positioned below, and a one-piece honeycomb mounting cage.",
+  "public_preview": "artifacts/wall-coolant-reservoir-v2/index.html",
+  "artifact_assets": "Illustrative SVG diagrams embedded in the page; not manufactured-part photography.",
+  "nominal_design": {
+    "modeled_max_capacity_liters": 0.55,
+    "hose_nominal_inner_diameter_in": 0.375,
+    "actual_hose_id_mm": 9.525,
+    "elbow_orifice_diameter_mm": 7.5,
+    "elbow_tip_barb_outside_diameter_mm": 10.8,
+    "printed_abs_solids": 5,
+    "print_plates": 3,
+    "print_material": "ABS",
+    "separate_nonprinted_parts": [
+      "polycarbonate sight plate 86x110x3mm",
+      "silicone gaskets",
+      "screws, inserts",
+      "hoses and clamps"
+    ]
+  },
+  "validation": {
+    "cad_manifold_mesh_checks": true,
+    "cad_nominal_interference_check": true,
+    "plate_dimension_check": true,
+    "physically_printed": false,
+    "pressure_rated": false,
+    "leak_tested": false,
+    "warm_water_tested": false,
+    "pump_tested": false
+  },
+  "source_archive": "SMS_Wall_Mounted_ABS_Coolant_Tank_V2_Integrated_38.zip, held privately in Brad's Simple Minds Studios / Shared AI Brain project vault; not included in public submission.",
+  "publication_note": "Submitted from Brad's own GitHub repository for review. No claim of official SMS release, site deployment, operational reliability, or tested thermal suitability.",
+  "licensing": "Original contribution by Brad DeVowe; rights reserved. SMS review and transfer require approval."
+}
