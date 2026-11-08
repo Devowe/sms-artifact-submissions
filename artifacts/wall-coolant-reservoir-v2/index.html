@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#091318">
+<meta name="description" content="The Wall Reservoir: Brad DeVowe's compact ABS 3D-printed coolant tank with an integral 3/8-inch 90-degree outlet and pump mounted below. Simple Minds Studios submission; digital prototype, physical testing pending.">
+<meta property="og:title" content="The Wall Reservoir | 3D Fabrication Artifact">
+<meta property="og:description" content="Warm-water circulation in a compact wall-mounted tank: five ABS prints, integrated elbow, a pump below, and a test-first engineering process.">
+<meta property="og:type" content="article">
+<title>The Wall Reservoir — Simple Minds Studios Submission</title>
+<style>
+:root{--base:#081218;--panel:#11232c;--panel2:#172c34;--rule:#304650;--white:#f0f5f4;--muted:#a8c0c6;--mint:#8ee8cf;--teal:#3bbfa9;--ice:#85d8ed;--amber:#f2c68d;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--base);color:var(--white);font:16px/1.63 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--mint);text-underline-offset:3px}a:hover{color:#c4fff0}button{font:inherit}.shell{max-width:var(--max);width:calc(100% - 48px);margin:auto}
+.skip{position:absolute;top:-100px;background:#fff;color:#000;padding:10px;z-index:2}.skip:focus{top:8px}
+.topline{background:rgba(6,20,25,.95);border-bottom:1px solid var(--rule)}.topline>.shell{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:17px 0}.logo{color:var(--white);font-size:12px;letter-spacing:.17em;font-weight:850;text-decoration:none}.logo em{color:var(--mint);font-style:normal}.topline nav{display:flex;gap:22px}.topline nav a{font-size:13px;color:var(--muted);text-decoration:none}
+.tag,.eyebrow,.stage,.mono{font:700 12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;text-transform:uppercase}.eyebrow{color:var(--mint);margin-bottom:22px}
+.hero{padding:88px 0 44px;position:relative;isolation:isolate}.hero:before{content:"";position:absolute;z-index:-1;right:-9vw;top:-110px;width:630px;height:580px;background:radial-gradient(circle,rgba(22,112,112,.24),transparent 65%);pointer-events:none}.hero h1{max-width:1000px;font-size:clamp(3.5rem,9vw,8rem);line-height:.96;letter-spacing:-.082em;margin:0 0 28px;font-weight:735}.hero h1 em{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--mint)}.lede{max-width:770px;font-size:clamp(1.11rem,2vw,1.45rem);color:#c9dadd;line-height:1.55}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.chip{border:1px solid #356055;border-radius:100px;color:var(--mint);padding:7px 12px;font:700 11px/1.4 ui-monospace,monospace}.chip.warn{border-color:#84623a;color:var(--amber)}.chip.alt{border-color:#385b69;color:#b6e4ed}
+.diagram{margin:30px 0 42px;overflow:hidden;background:linear-gradient(180deg,#122731,#0b171d);border:1px solid #34525d;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.26)}.diagram-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding:17px 22px}.diagram-head b{font-size:12px;letter-spacing:.11em;color:var(--mint)}.tabs{display:flex;padding:4px;gap:4px;border:1px solid #294650;border-radius:30px;background:#08161c}.tabs button{background:transparent;border:0;border-radius:25px;padding:9px 14px;font-size:12px;color:#b6ced3;cursor:pointer}.tabs button[aria-selected="true"]{background:var(--mint);color:#062021;font-weight:750}.tabs button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.scene{padding:10px 12px;min-height:400px;display:grid;place-items:center}.scene svg{display:block;width:100%;max-width:1000px;height:auto}.scene[hidden]{display:none}.caption{border-top:1px solid var(--rule);padding:12px 22px;color:var(--muted);font-size:12px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:18px;overflow:hidden;margin:44px 0 80px;background:var(--panel)}.metric{padding:28px 23px;border-right:1px solid var(--rule)}.metric:last-child{border-right:0}.metric strong{font-size:clamp(2.1rem,4vw,3.65rem);line-height:1;letter-spacing:-.07em;display:block}.metric small{display:block;margin-top:10px;font-size:12px;color:var(--muted)}
+.section{padding:70px 0;border-top:1px solid var(--rule)}.section-head{display:grid;grid-template-columns:.42fr 1fr;gap:40px;margin-bottom:30px}.section h2{font-size:clamp(2.1rem,4.5vw,4.1rem);letter-spacing:-.065em;line-height:1.1;margin:0 0 16px;font-weight:680}.section .intro{color:var(--muted);max-width:780px;margin:0}.stage{color:var(--mint);padding-top:11px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step,.tile{border:1px solid var(--rule);background:var(--panel);border-radius:16px;padding:24px}.step span{font:800 12px ui-monospace,monospace;color:var(--mint)}.step h3,.tile h3{font-size:21px;margin:29px 0 8px;letter-spacing:-.035em}.step p,.tile p{margin:0;color:var(--muted);font-size:14px}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tile h3{margin:0 0 12px}.tile.good{border-color:#397865;background:linear-gradient(140deg,#122e2a,#10222a)}.tile.caution{border-color:#8a6338}.tile ul{color:var(--muted);padding-left:20px;margin:12px 0}.tile li{margin:11px 0}.foot{background:#10212a;border-top:1px solid var(--rule);padding:58px 0}.foot h2{font:italic 400 clamp(2.3rem,5vw,4.7rem)/1.05 Georgia,serif;letter-spacing:-.06em;color:var(--mint);margin:0 0 19px}.foot p{max-width:740px;color:var(--muted)}.credit{margin-top:30px;border-top:1px solid var(--rule);padding-top:20px;font-size:13px;color:#c0d3d7}footer{background:#071117;border-top:1px solid #233b45;color:#9bb5bc;font-size:12px}footer .shell{display:flex;gap:15px;justify-content:space-between;flex-wrap:wrap;padding:22px 0}
+.svg-label{font:650 18px system-ui,sans-serif;fill:#edf8f5}.svg-muted{font:500 14px system-ui,sans-serif;fill:#afd0d3}.svg-mono{font:700 13px ui-monospace,monospace;fill:#8ee8cf;letter-spacing:1px}
+@media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}.section-head{grid-template-columns:1fr;gap:8px}.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+@media(max-width:600px){.shell{width:calc(100% - 32px)}.topline nav{display:none}.hero{padding:55px 0 26px}.hero h1{font-size:clamp(3.4rem,14vw,5rem)}.metrics{margin:22px 0 42px}.metric{padding:18px}.metric strong{font-size:2.2rem}.section{padding:54px 0}.steps,.twocol{grid-template-columns:1fr}.scene{min-height:240px;padding:2px}.diagram-head{padding:14px}.tabs button{padding:8px 10px;font-size:11px}.caption{padding:10px 14px}.svg-label{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#artifact">Skip to artifact</a>
+<div class="topline"><div class="shell"><a class="logo" href="https://simplemindsstudios.com/">SIMPLE MINDS <em>STUDIOS</em></a><nav aria-label="Page sections"><a href="#concept">The concept</a><a href="#construction">Build plan</a><a href="#status">Validation</a></nav><span class="tag" style="color:var(--amber)">Submission / not published</span></div></div>
+<main id="artifact">
+<header class="hero shell">
+<div class="eyebrow">ARTIFACT / EXPERIMENTAL FABRICATION / WATER CIRCULATION</div>
+<h1>Water,<br><em>in reserve.</em></h1>
+<p class="lede">An open-to-atmosphere, wall-mounted coolant reservoir conceived around a simple constraint: keep the pump below the tank, and make the 90° outlet part of the print rather than another fitting to buy.</p>
+<div class="chips"><span class="chip">V2 · ABS PROTOTYPE</span><span class="chip alt">3/8-INCH INTEGRAL BARB</span><span class="chip">CAD CHECKS PASSED</span><span class="chip warn">LEAK TEST PENDING</span></div>
+</header>
+<div class="shell">
+<figure class="diagram" id="concept">
+<div class="diagram-head"><b>01 / EXPLORE THE DESIGN</b><div class="tabs" role="tablist" aria-label="Diagram views"><button type="button" id="tab-overview" role="tab" aria-selected="true" aria-controls="scene-overview" tabindex="0" data-scene="overview">Assembly</button><button type="button" id="tab-circuit" role="tab" aria-selected="false" aria-controls="scene-circuit" tabindex="-1" data-scene="circuit">Water circuit</button><button type="button" id="tab-parts" role="tab" aria-selected="false" aria-controls="scene-parts" tabindex="-1" data-scene="parts">Print strategy</button></div></div>
+<div class="scene" id="scene-overview" role="tabpanel" aria-labelledby="tab-overview">
+<svg viewBox="0 0 1000 550" role="img" aria-label="Illustration of wall-mounted ABS tank in honeycomb cage with funnel on top, a 90-degree elbow exiting right at bottom and a pump mounted below with a curved 3/8-inch hose.">
+<defs><linearGradient id="tank" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#245b70" stop-opacity=".85"/><stop offset="1" stop-color="#071b29"/></linearGradient><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#79def3" stop-opacity=".83"/><stop offset="1" stop-color="#1676af" stop-opacity=".55"/></linearGradient><pattern id="grille" width="32" height="30" patternUnits="userSpaceOnUse"><path d="M8 1H24L31 15L24 29H8L1 15Z" fill="none" stroke="#607c86" stroke-width="3" opacity=".68"/></pattern><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="8" dy="14" stdDeviation="14" flood-opacity=".36"/></filter></defs>
+<g opacity=".16" stroke="#5e99a8"><path d="M30 470H970M30 395H970M30 320H970M30 245H970M30 170H970M110 65V520M210 65V520M310 65V520M410 65V520M510 65V520M610 65V520M710 65V520M810 65V520M910 65V520"/></g>
+<g filter="url(#shadow)">
+<rect x="258" y="110" width="254" height="302" rx="20" fill="#0a1a20" stroke="#57707b" stroke-width="11"/>
+<rect x="281" y="137" width="203" height="246" rx="9" fill="url(#tank)" stroke="#5d92a3" stroke-width="5"/>
+<path d="M285 232Q380 218 480 230V373H285Z" fill="url(#water)" opacity=".95"/>
+<path d="M286 230Q377 218 480 228" stroke="#a3f1ff" stroke-width="3" fill="none" opacity=".7"/>
+<rect x="264" y="144" width="30" height="230" fill="url(#grille)" stroke="#36515c" stroke-width="5"/>
+<rect x="475" y="144" width="32" height="230" fill="url(#grille)" stroke="#36515c" stroke-width="5"/>
+<rect x="308" y="174" width="150" height="189" rx="10" fill="none" stroke="#111d24" stroke-width="10"/>
+<path d="M319 187H446" stroke="#a6d8e5" opacity=".4" stroke-width="3"/>
+<path d="M470 143H517V416H470" stroke="#566f78" stroke-width="7" fill="none"/>
+<rect x="289" y="381" width="209" height="24" rx="8" fill="#152a31" stroke="#536c74" stroke-width="4"/>
+<path d="M322 112V84H455V112" fill="#17272e" stroke="#718a93" stroke-width="8"/>
+<path d="M353 85L330 28H449L427 85" fill="#193039" stroke="#6c8a94" stroke-width="7"/>
+<path d="M344 28H437" stroke="#b5d5d9" stroke-width="7" stroke-linecap="round"/>
+<rect x="269" y="163" width="10" height="55" rx="2" fill="#18303a"/>
+<path d="M395 398V427Q395 442 409 442H556" fill="none" stroke="#1f292d" stroke-width="29" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M395 398V427Q395 442 409 442H556" fill="none" stroke="#4c7281" stroke-width="19" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M550 433V451" stroke="#456b74" stroke-width="24" stroke-linecap="round"/>
+<path d="M558 439C608 442 617 463 611 484L602 498" stroke="#3a5d66" stroke-width="19" fill="none" stroke-linecap="round"/>
+<rect x="520" y="479" width="166" height="60" rx="15" fill="#18272d" stroke="#63838c" stroke-width="5"/>
+<circle cx="570" cy="509" r="16" fill="#8cebd4" opacity=".8"/><circle cx="570" cy="509" r="7" fill="#13232b"/>
+<path d="M590 506H655" stroke="#92aab1" stroke-width="7" stroke-linecap="round"/>
+</g>
+<path d="M512 148H617" stroke="#8ee8cf" stroke-width="2"/><text x="625" y="144" class="svg-label">Printed top return</text><text x="625" y="166" class="svg-muted">3/8″ hose barb</text>
+<path d="M496 230H622" stroke="#8bd8ed" stroke-width="2"/><text x="629" y="228" class="svg-label">Clear sight window</text><text x="629" y="250" class="svg-muted">PC sheet + silicone seal</text>
+<path d="M510 390H630" stroke="#8ee8cf" stroke-width="2"/><text x="637" y="388" class="svg-label">Integral 90° outlet</text><text x="637" y="410" class="svg-muted">No separate elbow fitting</text>
+<path d="M688 510H743" stroke="#8bd8ed" stroke-width="2"/><text x="753" y="507" class="svg-label">Pump below</text><text x="753" y="529" class="svg-muted">Gravity-fed inlet</text>
+<text x="32" y="67" class="svg-mono">ASSEMBLY STUDY / NOT A PHOTOGRAPH OR CAD RENDER</text>
+</svg></div>
+<div class="scene" id="scene-circuit" role="tabpanel" aria-labelledby="tab-circuit" hidden>
+<svg viewBox="0 0 1000 550" role="img" aria-label="Flow diagram: vented reservoir feeds integrated 90-degree elbow, then a pump below, then heat exchanger and thermoelectric cooler hot-side water block, returning to upper tank port.">
+<defs><marker id="arrow" markerWidth="11" markerHeight="11" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#86e6d2"/></marker></defs>
+<g fill="none" stroke="#294d58" stroke-width="2"><rect x="50" y="115" width="370" height="125" rx="18" fill="#172e38"/><rect x="580" y="115" width="370" height="125" rx="18" fill="#172e38"/><rect x="580" y="310" width="370" height="125" rx="18" fill="#172e38"/><rect x="50" y="310" width="370" height="125" rx="18" fill="#172e38"/></g>
+<g class="svg-mono"><text x="77" y="145">01 / OPEN TANK</text><text x="607" y="145">02 / PUMP BELOW</text><text x="607" y="340">03 / HEAT REJECTION</text><text x="77" y="340">04 / RETURN UP HIGH</text></g>
+<g class="svg-label"><text x="77" y="183">≈0.55 L ABS reservoir</text><text x="607" y="183">Short 3/8″ inlet hose</text><text x="607" y="378">Radiator + Peltier hot side</text><text x="77" y="378">Back into vented lid port</text></g>
+<g class="svg-muted"><text x="77" y="208">Bottom integral 90° barb</text><text x="607" y="208">Inlet stays below waterline</text><text x="607" y="404">Sized to dissipate actual heat</text><text x="77" y="404">Air must escape; no pressure seal</text></g>
+<g fill="none" stroke="#86e6d2" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"><path d="M432 178H570"/><path d="M760 253V298"/><path d="M570 375H433"/><path d="M234 298V253"/></g><text x="50" y="65" class="svg-mono">SCHEMATIC / FLOW DIRECTION / NOT PLUMBING SHOP DRAWING</text>
+</svg></div>
+<div class="scene" id="scene-parts" role="tabpanel" aria-labelledby="tab-parts" hidden>
+<svg viewBox="0 0 1000 550" role="img" aria-label="Five ABS pieces arranged in three printing plates: tank with integrated elbow; combined wall cage and honeycomb frame; lid with return barb, clear-window bezel, removable funnel.">
+<g fill="#183038" stroke="#47707b" stroke-width="3"><rect x="41" y="115" width="270" height="300" rx="22"/><rect x="366" y="115" width="270" height="300" rx="22"/><rect x="691" y="115" width="270" height="300" rx="22"/></g>
+<g class="svg-mono"><text x="70" y="151">PLATE 01</text><text x="394" y="151">PLATE 02</text><text x="719" y="151">PLATE 03</text></g>
+<g stroke="#91b7bf" stroke-width="7" fill="#255569"><path d="M138 193H214V337H138Z"/><path d="M180 336V367H250" fill="none" stroke="#8ee8cf" stroke-width="12"/><path d="M466 210H546V344H466Z" fill="none"/><path d="M475 220H540M475 246H540M475 272H540M475 298H540M475 324H540" stroke="#92d7c3" stroke-width="3"/><path d="M733 233H800V259H733Z"/><path d="M835 218H914V288H835Z" fill="none"/><path d="M748 332L734 296H793L777 332Z"/></g>
+<g class="svg-label"><text x="70" y="448">01 / Tank + elbow</text><text x="394" y="448">02 / Cage + wall mount</text><text x="719" y="448">03–05 / Trim parts</text></g><g class="svg-muted"><text x="70" y="474">One ABS piece</text><text x="394" y="474">One ABS piece</text><text x="719" y="474">Lid, bezel, funnel</text></g>
+<text x="42" y="62" class="svg-mono">5 PRINTABLE ABS SOLIDS / 3 PLATE LAYOUTS / MANUAL SLICER REVIEW REQUIRED</text>
+</svg></div>
+<figcaption class="caption">Original explanatory illustrations, not photographs of a completed print or dimensional manufacturing drawings. The actual CAD package is retained separately by Brad.</figcaption>
+</figure>
+<div class="metrics"><div class="metric"><strong>≈0.55<span style="font-size:.45em"> L</span></strong><small>modeled maximum tank volume; less during use</small></div><div class="metric"><strong>5</strong><small>ABS printed solids</small></div><div class="metric"><strong>3/8<span style="font-size:.45em">″</span></strong><small>nominal hose inside diameter</small></div><div class="metric"><strong>3</strong><small>arranged 3MF print plates</small></div></div>
+</div>
+<section class="section" id="construction"><div class="shell">
+<div class="section-head"><div class="stage">02 / DESIGN LOGIC</div><div><h2>A tank that goes above the pump.</h2><p class="intro">Most of the design is about preserving a favorite silhouette while eliminating needless joints: one ABS reservoir with its outlet already turned through 90°, a removable wide-mouth refill funnel, and a single combined honeycomb cage that mounts on the wall.</p></div></div>
+<div class="steps"><article class="step"><span>01</span><h3>Refill</h3><p>A removable funnel guides water into the vented tank from above.</p></article><article class="step"><span>02</span><h3>Store</h3><p>Water remains visible through a separate sealed clear polycarbonate plate.</p></article><article class="step"><span>03</span><h3>Feed</h3><p>The printed bottom elbow feeds 3/8″ hose into a pump mounted just below.</p></article><article class="step"><span>04</span><h3>Return</h3><p>After the radiator and thermoelectric cooler loop, water returns near the top.</p></article></div>
+</div></section>
+<section class="section" id="status"><div class="shell">
+<div class="section-head"><div class="stage">03 / ENGINEERING EVIDENCE</div><div><h2>Digitally checked.<br>Not leak-proof by assumption.</h2><p class="intro">The CAD files are a manufacturing starting point—not a verified working water system. A mesh can be mathematically watertight while a real FDM print leaks through layers, joints, or a stressed hose barb.</p></div></div>
+<div class="twocol"><div class="tile good"><h3>Completed in CAD</h3><ul><li>Five printable ABS mesh parts checked for manifold/watertight solid geometry</li><li>Nominal assembly interference-volume checks performed</li><li>Three plate layouts checked to fit the Bambu P2S build volume</li><li>3/8″-ID outlet/return concept and wall mount documented</li></ul></div><div class="tile caution"><h3>Still needs physical validation</h3><ul><li>Actual print integrity and support removal at the elbow</li><li>ABS layer bond, hose grip, clamps and strain relief</li><li>Gasket compression around clear sight plate and lid</li><li>24-hour cold-water leak test, warm-water cycles, circulating pump test and mounting-load check</li></ul></div></div>
+<div class="twocol" style="margin-top:14px"><div class="tile"><h3>What's not ABS?</h3><p>The clear sight plate is planned as 86 × 110 × 3 mm polycarbonate sheet, with compliant silicone gaskets and actual screws/inserts. Those materials are needed to retain the reference design and seal the reservoir.</p></div><div class="tile"><h3>Operating boundary</h3><p>Use only as an unpressurized, vented suction-side reservoir. The previously discussed 190°F was a question, not a target. No continuous safe operating temperature, leak resistance, or pumped performance has been established.</p></div></div>
+</div></section>
+</main>
+<div class="foot"><div class="shell">
+<div class="stage">04 / PROVENANCE & HANDOFF</div><h2>Make it. Measure it.<br>Then trust it.</h2><p>This submission documents V2 of an original functional-3D-printing project. The build package contains STL, STEP, three 3MF plate arrangements, CAD rebuild source, cut templates, and a detailed bill of materials. The source CAD archive remains in Brad's private shared project vault and is not bundled with this public proposal.</p>
+<p><strong>SMS review status:</strong> proposed artifact in Brad's submissions repository; not an approved release on the Simple Minds Studios website.</p>
+<div class="credit"><strong>Creative direction and reference selection:</strong> Brad DeVowe. <strong>CAD modeling and presentation assistance:</strong> Lincoln (ChatGPT / OpenAI). <strong>Project:</strong> Wall-Mounted ABS Coolant Reservoir V2 · November 8, 2026. No claim of physical testing, official SMS approval, or production suitability.</div>
+</div></div>
+<footer><div class="shell"><span>© 2026 Brad DeVowe · Original project submission · Rights reserved</span><span><a href="https://simplemindsstudios.com/">Simple Minds Studios</a> · <a href="#artifact">Back to top</a></span></div></footer>
+<script>
+(function(){var tabs=[].slice.call(document.querySelectorAll('[data-scene]'));function select(tab){tabs.forEach(function(t){var chosen=t===tab;t.setAttribute('aria-selected',chosen?'true':'false');t.tabIndex=chosen?0:-1;document.getElementById('scene-'+t.getAttribute('data-scene')).hidden=!chosen;});}tabs.forEach(function(t,i){t.addEventListener('click',function(){select(t);});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var idx=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;select(tabs[idx]);tabs[idx].focus();}});});})();
+</script>
+</body>
+</html>
